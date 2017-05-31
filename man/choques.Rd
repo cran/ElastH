@@ -22,4 +22,3 @@ Função retorna os choques, ou disturbios, nas equações principais e nas
 equações de transição
 }
 \keyword{internal}
-

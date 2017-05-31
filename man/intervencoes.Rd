@@ -18,4 +18,3 @@ Lista com posição da intervenção
 Função para detectar automaticamente as intervenções
 }
 \keyword{internal}
-

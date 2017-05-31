@@ -17,7 +17,7 @@
 #' detecção de intervenções. Padrão \code{FALSE}.
 #' @return Objeto dlm
 #' @seealso
-#' \code{\link{criar.dlm}}
+#' \code{\link{decompor}}
 #' \code{\link{dlmMLE2}}
 #' @keywords internal
 build.dlm <-

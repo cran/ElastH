@@ -16,4 +16,3 @@ Valor do teste de normalidade
 Função para testar a normalidade dos resíduos
 }
 \keyword{internal}
-

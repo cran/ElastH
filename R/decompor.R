@@ -101,20 +101,20 @@
 #' @examples
 #' seriey <- ts(runif(76), start=1997, end=c(2015,4), frequency=4)
 #'
-#' \donttest{ decomposicao <- criar.dlm(seriey) } #Decomposição sem variável independente
+#' \donttest{ decomposicao <- decompor(seriey) } #Decomposição sem variável independente
 #'
 #' seriex <- ts(runif(76), start=1997, end=c(2015,4), frequency=4)
-#' \donttest{ modelo <- criar.dlm(seriey, seriex) } #Decomposição e estimação de coeficente
+#' \donttest{ modelo <- decompor(seriey, seriex) } #Decomposição e estimação de coeficente
 #' 
 #' #Decomposição e estimação com nível e inclinacao fixos e sem sazonalidade
-#' \donttest{ modelo2 <- criar.dlm(seriey, seriex, nivel="F", inclinacao="F", sazon="N") }
+#' \donttest{ modelo2 <- decompor(seriey, seriex, nivel="F", inclinacao="F", sazon="N") }
 #' #Decomposição e estimação com coeficente constante
-#' \donttest{ modelo3 <- criar.dlm(seriey, seriex, regres="F") }
+#' \donttest{ modelo3 <- decompor(seriey, seriex, regres="F") }
 #' #Decomposição e estimação usando apenas um subconjunto dos dados
-#' \donttest{ modelo4 <- criar.dlm(seriey, seriex, comeco=2000, fim=2010) }
+#' \donttest{ modelo4 <- decompor(seriey, seriex, comeco=2000, fim=2010) }
 #' #Decomposição e estimação sem a detecção de intervenções
-#' \donttest{ modelo5 <- criar.dlm(seriey, seriex, interv.b=F) }
-criar.dlm <-
+#' \donttest{ modelo5 <- decompor(seriey, seriex, interv.b=F) }
+decompor <-
   function(
            y,
            X          = NULL,

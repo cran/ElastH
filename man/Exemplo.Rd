@@ -12,4 +12,3 @@ data(Exemplo)
 Lista extensiva de dados utilizados somente para exemplos e testes.
 }
 \keyword{datasets}
-

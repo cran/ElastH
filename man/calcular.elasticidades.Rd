@@ -41,9 +41,8 @@ Hpet <- ts(runif(76), start=1997, end=c(2015,4), frequency=4)
 \donttest{resultado <- calcularElasticidades(receitas, Hpib, Hpet, fim=c(2015,4))} 
 }
 \seealso{
-\code{\link{todas.dlms}}
-\code{\link{criar.dlm}}
+\code{\link{decompor.todos}}
+\code{\link{decompor}}
 \code{\link{Exemplo}}
 \code{\link{exportar}}
 }
-

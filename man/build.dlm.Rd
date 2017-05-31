@@ -31,8 +31,7 @@ Função que cria a partir dos parâmetros desejados as matrizes no formato dlm.
 Para mais informações ver pacote dlm: \url{https://cran.r-project.org/package=dlm}.
 }
 \seealso{
-\code{\link{criar.dlm}}
+\code{\link{decompor}}
 \code{\link{dlmMLE2}}
 }
 \keyword{internal}
-

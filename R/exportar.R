@@ -2,7 +2,7 @@
 #'
 #' Função que formata os dados para um padrão de exportação.
 #' @param resultado Lista resultante da função \code{\link{calcular.elasticidades}} ou
-#' ou da função \code{\link{todas.dlms}} com um conjunto de elasticidades calculadas.
+#' ou da função \code{\link{decompor.todos}} com um conjunto de elasticidades calculadas.
 #' @return Data frame no formato correto para exportação para o Excel.
 #'
 #' @importFrom utils write.table
@@ -14,7 +14,7 @@
 #' \donttest{resultado.exportacao <- exportar(resultado)}
 #' \donttest{write.csv2(resultado.exportacao, "/tmp/dados.csv")} #Escreve resultados em arquivo CSV.
 #' @seealso
-#' \code{\link{todas.dlms}}
+#' \code{\link{decompor.todos}}
 #' \code{\link{calcular.elasticidades}}
 #' \code{\link{Exemplo}}
 exportar <-

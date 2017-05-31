@@ -22,4 +22,3 @@ Parâmetros ótimos para a função de geração do objeto dlm
 Esta função prepara os dados para chamar a função optim
 }
 \keyword{internal}
-

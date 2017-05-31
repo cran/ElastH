@@ -28,69 +28,69 @@
 #' Hpet <- ts(runif(76), start=1997, end=c(2015,4), frequency=4)
 #' \donttest{resultado <- calcularElasticidades(receitas, Hpib, Hpet, fim=c(2015,4))} 
 #' @seealso
-#' \code{\link{todas.dlms}}
-#' \code{\link{criar.dlm}}
+#' \code{\link{decompor.todos}}
+#' \code{\link{decompor}}
 #' \code{\link{Exemplo}}
 #' \code{\link{exportar}}
 calcular.elasticidades <-
 function(Receitas, Hpib, Hpet=NULL, tce, fim) {
   ###Produto
   message("Calculando TRT")
-  trt  <- todas.dlms(Receitas[, "TRT"] , X = Hpib, comeco = 2000, fim = fim)
-  trt1 <- todas.dlms(Receitas[, "TRT"] , X = lag(Hpib,-1), comeco = 2000, fim = fim)
-  trt2 <- todas.dlms(Receitas[, "TRT"] , X = cbind(Hpib,lag(Hpib,-1)), comeco = 2000, fim = fim)
+  trt  <- decompor.todos(Receitas[, "TRT"] , X = Hpib, comeco = 2000, fim = fim)
+  trt1 <- decompor.todos(Receitas[, "TRT"] , X = lag(Hpib,-1), comeco = 2000, fim = fim)
+  trt2 <- decompor.todos(Receitas[, "TRT"] , X = cbind(Hpib,lag(Hpib,-1)), comeco = 2000, fim = fim)
   
   message("Calculando TFP")
-  tfp  <- todas.dlms(Receitas[, "TFP"] , X = Hpib, comeco = 1997, fim = fim)
-  tfp1 <- todas.dlms(Receitas[, "TFP"] , X = lag(Hpib,-1), comeco = 1997, fim = fim)
-  tfp2 <- todas.dlms(Receitas[, "TFP"] , X = cbind(Hpib,lag(Hpib,-1)), comeco = 1997, fim = fim)
+  tfp  <- decompor.todos(Receitas[, "TFP"] , X = Hpib, comeco = 1997, fim = fim)
+  tfp1 <- decompor.todos(Receitas[, "TFP"] , X = lag(Hpib,-1), comeco = 1997, fim = fim)
+  tfp2 <- decompor.todos(Receitas[, "TFP"] , X = cbind(Hpib,lag(Hpib,-1)), comeco = 1997, fim = fim)
 
   message("Calculando TRC")
-  trc  <- todas.dlms(Receitas[, "TRC"] , X = Hpib, comeco = 1997, fim = fim)
-  trc1 <- todas.dlms(Receitas[, "TRC"] , X = lag(Hpib,-1), comeco = 1997, fim = fim)
-  trc2 <- todas.dlms(Receitas[, "TRC"] , X = cbind(Hpib, lag(Hpib,-1)), comeco = 1997, fim = fim)
+  trc  <- decompor.todos(Receitas[, "TRC"] , X = Hpib, comeco = 1997, fim = fim)
+  trc1 <- decompor.todos(Receitas[, "TRC"] , X = lag(Hpib,-1), comeco = 1997, fim = fim)
+  trc2 <- decompor.todos(Receitas[, "TRC"] , X = cbind(Hpib, lag(Hpib,-1)), comeco = 1997, fim = fim)
 
   message("Calculando TI")
-  ti   <- todas.dlms(Receitas[, "TI"] , X = Hpib, comeco = 2001, fim = fim)
-  ti1  <- todas.dlms(Receitas[, "TI"] , X = lag(Hpib,-1), comeco = 2001, fim = fim)
-  ti2  <- todas.dlms(Receitas[, "TI"] , X = cbind(Hpib,lag(Hpib,-1)), comeco = 2001, fim = fim)
+  ti   <- decompor.todos(Receitas[, "TI"] , X = Hpib, comeco = 2001, fim = fim)
+  ti1  <- decompor.todos(Receitas[, "TI"] , X = lag(Hpib,-1), comeco = 2001, fim = fim)
+  ti2  <- decompor.todos(Receitas[, "TI"] , X = cbind(Hpib,lag(Hpib,-1)), comeco = 2001, fim = fim)
 
   message("Calculando TM")
-  tm   <- todas.dlms(Receitas[, "TM"] , X = cbind(Hpib, tce), comeco = 2005, fim = fim)
-  tm1  <- todas.dlms(Receitas[, "TM"] , X = cbind(lag(Hpib,-1), tce), comeco = 2005, fim = fim)
-  tm2  <- todas.dlms(Receitas[, "TM"] , X = cbind(Hpib, lag(Hpib,-1), tce), comeco = 2005, fim = fim)
+  tm   <- decompor.todos(Receitas[, "TM"] , X = cbind(Hpib, tce), comeco = 2005, fim = fim)
+  tm1  <- decompor.todos(Receitas[, "TM"] , X = cbind(lag(Hpib,-1), tce), comeco = 2005, fim = fim)
+  tm2  <- decompor.todos(Receitas[, "TM"] , X = cbind(Hpib, lag(Hpib,-1), tce), comeco = 2005, fim = fim)
 
   message("Calculando TGC")
-  tgc  <- todas.dlms(Receitas[, "TGC"] , X = Hpib, comeco = 2005, fim = fim)
-  tgc1 <- todas.dlms(Receitas[, "TGC"] , X = lag(Hpib, -1), comeco = 2005, fim = fim)
-  tgc2 <- todas.dlms(Receitas[, "TGC"] , X = cbind(Hpib, lag(Hpib, -1)), comeco = 2005, fim = fim)
+  tgc  <- decompor.todos(Receitas[, "TGC"] , X = Hpib, comeco = 2005, fim = fim)
+  tgc1 <- decompor.todos(Receitas[, "TGC"] , X = lag(Hpib, -1), comeco = 2005, fim = fim)
+  tgc2 <- decompor.todos(Receitas[, "TGC"] , X = cbind(Hpib, lag(Hpib, -1)), comeco = 2005, fim = fim)
 
   message("Calculando TRAN")
-  tran <- todas.dlms(Receitas[, "TRAN"] , X = Hpib, comeco = 2002, fim = fim)
-  tran1<- todas.dlms(Receitas[, "TRAN"] , X = lag(Hpib, -1), comeco = 2002, fim = fim)
-  tran2<- todas.dlms(Receitas[, "TRAN"] , X = cbind(Hpib, lag(Hpib, -1)), comeco = 2002, fim = fim)
+  tran <- decompor.todos(Receitas[, "TRAN"] , X = Hpib, comeco = 2002, fim = fim)
+  tran1<- decompor.todos(Receitas[, "TRAN"] , X = lag(Hpib, -1), comeco = 2002, fim = fim)
+  tran2<- decompor.todos(Receitas[, "TRAN"] , X = cbind(Hpib, lag(Hpib, -1)), comeco = 2002, fim = fim)
 
   message("Calculando ICMS")
-  icms <- todas.dlms(Receitas[, "ICMS"], X = Hpib, comeco = 1997, fim = fim)
-  icms1<- todas.dlms(Receitas[, "ICMS"], X = lag(Hpib,-1), comeco = 1997, fim = fim)
-  icms2<- todas.dlms(Receitas[, "ICMS"], X = cbind(Hpib, lag(Hpib,-1)), comeco = 1997, fim = fim)
+  icms <- decompor.todos(Receitas[, "ICMS"], X = Hpib, comeco = 1997, fim = fim)
+  icms1<- decompor.todos(Receitas[, "ICMS"], X = lag(Hpib,-1), comeco = 1997, fim = fim)
+  icms2<- decompor.todos(Receitas[, "ICMS"], X = cbind(Hpib, lag(Hpib,-1)), comeco = 1997, fim = fim)
 
   message("Calculando ISS")
-  iss  <- todas.dlms(Receitas[, "ISS"], X = Hpib, comeco = 2002, fim = fim)
-  iss1 <- todas.dlms(Receitas[, "ISS"], X = lag(Hpib, -1), comeco = 2002, fim = fim)
-  iss2 <- todas.dlms(Receitas[, "ISS"], X = cbind(Hpib, lag(Hpib, -1)), comeco = 2002, fim = fim)
+  iss  <- decompor.todos(Receitas[, "ISS"], X = Hpib, comeco = 2002, fim = fim)
+  iss1 <- decompor.todos(Receitas[, "ISS"], X = lag(Hpib, -1), comeco = 2002, fim = fim)
+  iss2 <- decompor.todos(Receitas[, "ISS"], X = cbind(Hpib, lag(Hpib, -1)), comeco = 2002, fim = fim)
 
   ###Petróleo
   if(!is.null(Hpet)){
     message("Calculando ROY")
-    roy  <- todas.dlms(Receitas[, "ROY"] , X = Hpet, comeco = 2000, fim = fim, sazon.b=F)
-    roy1 <- todas.dlms(Receitas[, "ROY"] , X = lag(Hpet, -1), comeco = 2000, fim = fim, sazon.b=F)
-    roy2 <- todas.dlms(Receitas[, "ROY"] , X = cbind(Hpet, lag(Hpet, -1)), comeco = 2000, fim = fim, sazon.b=F)
+    roy  <- decompor.todos(Receitas[, "ROY"] , X = Hpet, comeco = 2000, fim = fim, sazon.b=F)
+    roy1 <- decompor.todos(Receitas[, "ROY"] , X = lag(Hpet, -1), comeco = 2000, fim = fim, sazon.b=F)
+    roy2 <- decompor.todos(Receitas[, "ROY"] , X = cbind(Hpet, lag(Hpet, -1)), comeco = 2000, fim = fim, sazon.b=F)
   
     message("Calculando PE")
-    pe   <- todas.dlms(Receitas[, "PE"] , X = Hpet, comeco = 2000, fim = fim, sazon.b=F)
-    pe1  <- todas.dlms(Receitas[, "PE"] , X = lag(Hpet, -1), comeco = 2000, fim = fim, sazon.b=F)
-    pe2  <- todas.dlms(Receitas[, "PE"] , X = cbind(Hpet, lag(Hpet, -1)), comeco = 2000, fim = fim, sazon.b=F)
+    pe   <- decompor.todos(Receitas[, "PE"] , X = Hpet, comeco = 2000, fim = fim, sazon.b=F)
+    pe1  <- decompor.todos(Receitas[, "PE"] , X = lag(Hpet, -1), comeco = 2000, fim = fim, sazon.b=F)
+    pe2  <- decompor.todos(Receitas[, "PE"] , X = cbind(Hpet, lag(Hpet, -1)), comeco = 2000, fim = fim, sazon.b=F)
   } else {
     roy <- NULL
     pe <- NULL

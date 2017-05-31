@@ -13,18 +13,18 @@
 #' @examples
 #' seriey <- ts(runif(96), start=1997, end=c(2015,4), frequency=4)
 #' # Estimar modelo sem variáveis indepedentes
-#' \donttest{ lista.dlm <- todas.dlms(seriey) }
+#' \donttest{ lista.dlm <- decompor.todos(seriey) }
 #'
 #' seriex <- ts(runif(96), start=1997, end=c(2015,4), frequency=4)
 #' # Estimar modelos incluindo variável independente
-#' \donttest{ lista.dlm2 <- todas.dlms(y=seriey, X=seriex) }
+#' \donttest{ lista.dlm2 <- decompor.todos(y=seriey, X=seriex) }
 #' # Estimar modelo, com variavel dependente, mas restringindo o escopo temporal
-#' \donttest{ lista.dlm3 <- todas.dlms(y=seriey, X=seriex, comeco=2000, fim=2014) }
+#' \donttest{ lista.dlm3 <- decompor.todos(y=seriey, X=seriex, comeco=2000, fim=2014) }
 #' @export
 #' @seealso
-#' \code{\link{criar.dlm}}
+#' \code{\link{decompor}}
 #' \code{\link{exportar}}
-todas.dlms <-
+decompor.todos <-
 function(y,X=NULL, comeco=NULL, fim=NULL, sazon.b=TRUE, regres="S") {
   possibilidades <- matrix(c("S","S","S",
                              "S","S","F",
@@ -42,7 +42,7 @@ function(y,X=NULL, comeco=NULL, fim=NULL, sazon.b=TRUE, regres="S") {
 
   applyfun <- function(z, y2, X2, comeco2, fim2, sazon.b2=NULL) {
     tryCatch({
-      return(criar.dlm(y=y2, X=X2, comeco=comeco2, fim=fim2, regres=regres, nivel=z[1], inclinacao=z[2], sazon=z[3]))
+      return(decompor(y=y2, X=X2, comeco=comeco2, fim=fim2, regres=regres, nivel=z[1], inclinacao=z[2], sazon=z[3]))
     }, error = function(error) {
       warning(paste("Erro na estimativo do modelo:", paste0(z, collapse=" ") ,
                     "periodo: ", paste0(comeco2, collapse="."),"-",

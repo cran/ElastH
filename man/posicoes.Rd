@@ -16,4 +16,3 @@ Vetor com as posições dos componentes no objeto dlm. names(ret): nome dos comp
 Função que detecta a partir de um objeto dlm as posições dos componentes
 }
 \keyword{internal}
-

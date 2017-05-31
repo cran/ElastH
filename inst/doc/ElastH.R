@@ -14,50 +14,56 @@ options(width=70, max.print=50)
 
 
 ###################################################
-### code chunk number 3: carregar
+### code chunk number 3: Instalar (eval = FALSE)
+###################################################
+## install.packages("Caminho/ElastH_0.3.1.tar.gz", repos=NULL, type="source")
+
+
+###################################################
+### code chunk number 4: carregar
 ###################################################
 library(ElastH)
 
 
 ###################################################
-### code chunk number 4: data
+### code chunk number 5: data
 ###################################################
 data(Exemplo)
 
 
 ###################################################
-### code chunk number 5: Exemplo.y
+### code chunk number 6: Exemplo.y
 ###################################################
 Exemplo$y
 Exemplo$Hpib
 
 
 ###################################################
-### code chunk number 6: define.criar.dlm1
+### code chunk number 7: define.decompor1
 ###################################################
 modelo <- Exemplo$modelo
 
 
 ###################################################
-### code chunk number 7: criar.dlm1 (eval = FALSE)
+### code chunk number 8: decompor1 (eval = FALSE)
 ###################################################
-## modelo <- criar.dlm(Exemplo$y)
+## modelo <- decompor(Exemplo$y)
 
 
 ###################################################
-### code chunk number 8: classExemplo
+### code chunk number 9: classExemplo
 ###################################################
 class(Exemplo$y)
 
 
 ###################################################
-### code chunk number 9: modelo1
+### code chunk number 10: modelo1
 ###################################################
 modelo$comp
 
 
 ###################################################
-### code chunk number 10: testes
+### code chunk number 11: testes
 ###################################################
 modelo$q
 modelo$h
@@ -65,127 +71,142 @@ modelo$nt
 
 
 ###################################################
-### code chunk number 11: define.criar.dlm2
+### code chunk number 12: define.decompor2
 ###################################################
 modelo <- Exemplo$modelo2
 
 
 ###################################################
-### code chunk number 12: criar.dlm2 (eval = FALSE)
+### code chunk number 13: decompor2 (eval = FALSE)
 ###################################################
-## modelo <- criar.dlm(Exemplo$y, X=Exemplo$Hpib)
+## modelo <- decompor(Exemplo$y, X=Exemplo$Hpib)
 
 
 ###################################################
-### code chunk number 13: criar.dlm2.print
+### code chunk number 14: decompor2.print
 ###################################################
 modelo$comp
 
 
 ###################################################
-### code chunk number 14: definir.criardlm3
+### code chunk number 15: definir.criardlm3
 ###################################################
 modelo <- Exemplo$modelo3
 
 
 ###################################################
-### code chunk number 15: criar.dlm3.noteval (eval = FALSE)
+### code chunk number 16: decompor3.noteval (eval = FALSE)
 ###################################################
-## modelo <- criar.dlm(Exemplo$y, X=Exemplo$Hpib, inclinacao="F")
+## modelo <- decompor(Exemplo$y, X=Exemplo$Hpib, inclinacao="F")
 
 
 ###################################################
-### code chunk number 16: criar.dlm3.print
+### code chunk number 17: decompor3.print
 ###################################################
 modelo$comp
 
 
 ###################################################
-### code chunk number 17: criar.dlm4 (eval = FALSE)
+### code chunk number 18: decompor4 (eval = FALSE)
 ###################################################
-## modelo <- criar.dlm(Exemplo$y, X=Exemplo$Hpib, comeco=2007, 
+## modelo <- decompor(Exemplo$y, X=Exemplo$Hpib, comeco=2007, 
 ##                     fim=c(2014,4))
 
 
 ###################################################
-### code chunk number 18: todas.dlms (eval = FALSE)
+### code chunk number 19: decompor.todos (eval = FALSE)
 ###################################################
-## lista.dlm <- todas.dlms(Exemplo$y, X=Exemplo$Hpib, 
+## lista.dlm <- decompor.todos(Exemplo$y, X=Exemplo$Hpib, 
 ##                         comeco=2005, fim=c(2014,4))
+
+
+###################################################
+### code chunk number 20: tdlms.str (eval = FALSE)
+###################################################
 ## str(lista.dlm,1)
+
+
+###################################################
+### code chunk number 21: tdlms.str.print
+###################################################
+str(Exemplo$lista.y,1)
+
+
+###################################################
+### code chunk number 22: tdlms.comp (eval = FALSE)
+###################################################
 ## lista.dlm[[1]]$comp
 
 
 ###################################################
-### code chunk number 19: todas.dlms.print
+### code chunk number 23: tdlms.comp.print
 ###################################################
-str(Exemplo$lista.y,1)
 Exemplo$lista.y[[1]]$comp
 
 
 ###################################################
-### code chunk number 20: classeigual (eval = FALSE)
+### code chunk number 24: classeigual (eval = FALSE)
 ###################################################
 ## class(lista.dlm[[1]]) == class(modelo)
 
 
 ###################################################
-### code chunk number 21: classeigual.print
+### code chunk number 25: classeigual.print
 ###################################################
 class(Exemplo$lista.y[[1]]) == class(modelo)
 
 
 ###################################################
-### code chunk number 22: elasticidade (eval = FALSE)
+### code chunk number 26: elasticidade (eval = FALSE)
 ###################################################
 ## resultado <- calcular.elasticidades(Exemplo$receitas, 
 ##              Hpib=Exemplo$Hpib, Hpet=Exemplo$Hpet, fim=c(2015,4))
 
 
 ###################################################
-### code chunk number 23: exemplo
+### code chunk number 27: exemplo
 ###################################################
 Exemplo$receitas
 
 
 ###################################################
-### code chunk number 24: define.resultado
+### code chunk number 28: define.resultado
 ###################################################
 resultado <- Exemplo$resultado
 
 
 ###################################################
-### code chunk number 25: resultado.print
+### code chunk number 29: resultado.print
 ###################################################
 str(resultado,1)
 
 
 ###################################################
-### code chunk number 26: resultado.trt4
+### code chunk number 30: resultado.trt4
 ###################################################
 resultado$trt[[4]]$comp
 
 
 ###################################################
-### code chunk number 27: resultado.tgc7
+### code chunk number 31: resultado.tgc7
 ###################################################
 resultado$tgc[[7]]$comp
 
 
 ###################################################
-### code chunk number 28: exportarcao.show (eval = FALSE)
+### code chunk number 32: exportarcao.show (eval = FALSE)
 ###################################################
 ## resultado.exportacao <- exportar(resultado)
 
 
 ###################################################
-### code chunk number 29: salvando (eval = FALSE)
+### code chunk number 33: salvando (eval = FALSE)
 ###################################################
 ## write.csv2(resultado.exportacao, file="Caminho/Desejado/Nome.csv")
 
 
 ###################################################
-### code chunk number 30: Script (eval = FALSE)
+### code chunk number 34: Script (eval = FALSE)
 ###################################################
 ## arquivo   <- "elasticidades.csv"
 ## Receitas  <- NULL
@@ -208,82 +229,82 @@ resultado$tgc[[7]]$comp
 ## 
 ## 
 ## resultado <- list(
-##   trt  = todas.dlms(Receitas[, "TRT"] , X = Hpib,
+##   trt  = decompor.todos(Receitas[, "TRT"] , X = Hpib,
 ##                     comeco = comeco$trt , fim = fim),
-##   trt1 = todas.dlms(Receitas[, "TRT"] , X = lag(Hpib,-1),
+##   trt1 = decompor.todos(Receitas[, "TRT"] , X = lag(Hpib,-1),
 ##                     comeco = comeco$trt , fim = fim),
-##   trt2 = todas.dlms(Receitas[, "TRT"] , X = cbind(Hpib, lag(Hpib, -1)),
+##   trt2 = decompor.todos(Receitas[, "TRT"] , X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$trt , fim = fim),
 ##   
-##   tfp  = todas.dlms(Receitas[, "TFP"] , X = Hpib,
+##   tfp  = decompor.todos(Receitas[, "TFP"] , X = Hpib,
 ##                     comeco = comeco$tfp , fim = fim),
-##   tfp1 = todas.dlms(Receitas[, "TFP"] , X = lag(Hpib,-1),
+##   tfp1 = decompor.todos(Receitas[, "TFP"] , X = lag(Hpib,-1),
 ##                     comeco = comeco$tfp , fim = fim),
-##   tfp2 = todas.dlms(Receitas[, "TFP"] , X = cbind(Hpib, lag(Hpib, -1)),
+##   tfp2 = decompor.todos(Receitas[, "TFP"] , X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$tfp , fim = fim),
 ## 
-##   trc  = todas.dlms(Receitas[, "TRC"] , X = Hpib,
+##   trc  = decompor.todos(Receitas[, "TRC"] , X = Hpib,
 ##                     comeco = comeco$trc , fim = fim),
-##   trc1 = todas.dlms(Receitas[, "TRC"] , X = lag(Hpib,-1),
+##   trc1 = decompor.todos(Receitas[, "TRC"] , X = lag(Hpib,-1),
 ##                     comeco = comeco$trc , fim = fim),
-##   trc2 = todas.dlms(Receitas[, "TRC"] , X = cbind(Hpib, lag(Hpib, -1)),
+##   trc2 = decompor.todos(Receitas[, "TRC"] , X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$trc , fim = fim),
 ## 
-##   ti   = todas.dlms(Receitas[, "TI"]  , X = Hpib,
+##   ti   = decompor.todos(Receitas[, "TI"]  , X = Hpib,
 ##                     comeco = comeco$ti  , fim = fim),
-##   ti1  = todas.dlms(Receitas[, "TI"]  , X = lag(Hpib,-1),
+##   ti1  = decompor.todos(Receitas[, "TI"]  , X = lag(Hpib,-1),
 ##                     comeco = comeco$ti  , fim = fim),
-##   ti2  = todas.dlms(Receitas[, "TI"]  , X = cbind(Hpib, lag(Hpib, -1)),
+##   ti2  = decompor.todos(Receitas[, "TI"]  , X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$ti  , fim = fim),
 ## 
-##   tm   = todas.dlms(Receitas[, "TM"]  , X = cbind(Hpib, log(tce)),
+##   tm   = decompor.todos(Receitas[, "TM"]  , X = cbind(Hpib, log(tce)),
 ##                     comeco = comeco$tm, fim = fim),
-##   tm1  = todas.dlms(Receitas[, "TM"]  , X = cbind(lag(Hpib,-1), log(tce)),
+##   tm1  = decompor.todos(Receitas[, "TM"]  , X = cbind(lag(Hpib,-1), log(tce)),
 ##                     comeco = comeco$tm, fim = fim),
-##   tm2  = todas.dlms(Receitas[, "TM"], 
+##   tm2  = decompor.todos(Receitas[, "TM"], 
 ##                     X = cbind(Hpib, lag(Hpib, -1), log(tce)),
 ##                     comeco = comeco$tm, fim = fim),
 ## 
-##   tgc  = todas.dlms(Receitas[, "TGC"] , X = Hpib,
+##   tgc  = decompor.todos(Receitas[, "TGC"] , X = Hpib,
 ##                     comeco = comeco$tgc , fim = fim),
-##   tgc1 = todas.dlms(Receitas[, "TGC"] , X = lag(Hpib, -1),
+##   tgc1 = decompor.todos(Receitas[, "TGC"] , X = lag(Hpib, -1),
 ##                     comeco = comeco$tgc , fim = fim),
-##   tgc2 = todas.dlms(Receitas[, "TGC"] , X = cbind(Hpib, lag(Hpib, -1)),
+##   tgc2 = decompor.todos(Receitas[, "TGC"] , X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$tgc , fim = fim),
 ## 
-##   roy  = todas.dlms(Receitas[, "ROY"] , X = Hpet,
+##   roy  = decompor.todos(Receitas[, "ROY"] , X = Hpet,
 ##                     comeco = comeco$roy , fim = fim),
-##   roy1 = todas.dlms(Receitas[, "ROY"] , X = lag(Hpet, -1),
+##   roy1 = decompor.todos(Receitas[, "ROY"] , X = lag(Hpet, -1),
 ##                     comeco = comeco$roy , fim = fim),
-##   roy2 = todas.dlms(Receitas[, "ROY"] , X = cbind(Hpet, lag(Hpet, -1)),
+##   roy2 = decompor.todos(Receitas[, "ROY"] , X = cbind(Hpet, lag(Hpet, -1)),
 ##                     comeco = comeco$roy , fim = fim),
 ##   
-##   pe   = todas.dlms(Receitas[, "PE"]  , X = Hpet,
+##   pe   = decompor.todos(Receitas[, "PE"]  , X = Hpet,
 ##                     comeco = comeco$pe  , fim = fim),
-##   pe1  = todas.dlms(Receitas[, "PE"]  , X = lag(Hpet, -1),
+##   pe1  = decompor.todos(Receitas[, "PE"]  , X = lag(Hpet, -1),
 ##                     comeco = comeco$pe  , fim = fim),
-##   pe2  = todas.dlms(Receitas[, "PE"]  , X = cbind(Hpet, lag(Hpet, -1)),
+##   pe2  = decompor.todos(Receitas[, "PE"]  , X = cbind(Hpet, lag(Hpet, -1)),
 ##                     comeco = comeco$pe  , fim = fim),
 ## 
-##   tran = todas.dlms(Receitas[, "TRAN"], X = Hpib,
+##   tran = decompor.todos(Receitas[, "TRAN"], X = Hpib,
 ##                     comeco = comeco$tran, fim = fim),
-##   tran1= todas.dlms(Receitas[, "TRAN"], X = lag(Hpib, -1),
+##   tran1= decompor.todos(Receitas[, "TRAN"], X = lag(Hpib, -1),
 ##                     comeco = comeco$tran, fim = fim),
-##   tran2= todas.dlms(Receitas[, "TRAN"], X = cbind(Hpib, lag(Hpib, -1)),
+##   tran2= decompor.todos(Receitas[, "TRAN"], X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$tran, fim = fim),
 ## 
-##   icms = todas.dlms(Receitas[, "ICMS"], X = Hpib,
+##   icms = decompor.todos(Receitas[, "ICMS"], X = Hpib,
 ##                     comeco = comeco$icms, fim = fim),
-##   icms1= todas.dlms(Receitas[, "ICMS"], X = lag(Hpib,-1),
+##   icms1= decompor.todos(Receitas[, "ICMS"], X = lag(Hpib,-1),
 ##                     comeco = comeco$icms, fim = fim),
-##   icms2= todas.dlms(Receitas[, "ICMS"], X = cbind(Hpib, lag(Hpib, -1)),
+##   icms2= decompor.todos(Receitas[, "ICMS"], X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$icms, fim = fim),
 ## 
-##   iss  = todas.dlms(Receitas[, "ISS"] , X = Hpib,
+##   iss  = decompor.todos(Receitas[, "ISS"] , X = Hpib,
 ##                     comeco = comeco$iss , fim = fim),
-##   iss1 = todas.dlms(Receitas[, "ISS"] , X = lag(Hpib, -1),
+##   iss1 = decompor.todos(Receitas[, "ISS"] , X = lag(Hpib, -1),
 ##                     comeco = comeco$iss , fim = fim),
-##   iss2 = todas.dlms(Receitas[, "ISS"] , X = cbind(Hpib, lag(Hpib, -1)),
+##   iss2 = decompor.todos(Receitas[, "ISS"] , X = cbind(Hpib, lag(Hpib, -1)),
 ##                     comeco = comeco$iss , fim = fim)
 ## )
 ## 

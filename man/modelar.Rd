@@ -42,4 +42,3 @@ o valor dos componentes, reestrutura o resultados da função do pacote dlm para
 de legibilidade, e, por fim, realiza testes diversos nos resíduos e valores obtidos.
 }
 \keyword{internal}
-

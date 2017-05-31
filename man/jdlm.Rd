@@ -34,4 +34,3 @@ Função transforma objetos dlm tradicionais em listas com modelos para
 cada momento no tempo.
 }
 \keyword{internal}
-

@@ -1,6 +1,6 @@
-context("criar.dlm")
+context("decompor")
 
-modelo <- criar.dlm(y = Exemplo$y, X=Exemplo$Hpib,
+modelo <- decompor(y = Exemplo$y, X=Exemplo$Hpib,
                     irregular="S", nivel="F", inclinacao="S",
                    sazon="F", regres="F", comeco=2005, fim=c(2014,4)) 
 
@@ -18,7 +18,7 @@ test_that("Função deve retornar modelo correto", {
             #expect_equal(modelo , modelo2)
         #})
 
-modelo <- criar.dlm(y = Exemplo$y.interv.complexa, Exemplo$Hpib, nivel="F")
+modelo <- decompor(y = Exemplo$y.interv.complexa, Exemplo$Hpib, nivel="F")
 
 test_that("Funão deve retornar valores no formato correto", {
             expect_equal(class(modelo), "mee")

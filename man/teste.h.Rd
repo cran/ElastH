@@ -18,4 +18,3 @@ Valor do Test H
 Função para testar a homocedasticidade dos resíduos, teste H
 }
 \keyword{internal}
-
